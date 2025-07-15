@@ -1,13 +1,13 @@
 import { asyncAdd } from './asyncAdd';
 
 describe('asyncAdd – 의도적 FAIL', () => {
-    
+
     beforeAll(() => {
-    console.log('⏳ asyncAdd 테스트 전체 전처리');
+    console.log('asyncAdd 테스트 전체 전처리');
     });
 
     afterAll(() => {
-    console.log('✅ asyncAdd 테스트 전체 후처리');
+    console.log('asyncAdd 테스트 전체 후처리');
     });
 
     test('return/await 누락 → FAIL 예상', () => {
