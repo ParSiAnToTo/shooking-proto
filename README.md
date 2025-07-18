@@ -40,3 +40,4 @@
     - 헤더 장바구니 아이콘에 실시간 담긴 상품 수량 표시
 
 - 테스트용 URL
+   - https://ParSiAnToTo.github.io/shooking-proto
