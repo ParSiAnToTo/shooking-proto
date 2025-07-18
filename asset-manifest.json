@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/shooking-proto/static/css/main.daddd230.css",
+    "main.js": "/shooking-proto/static/js/main.14ae68ed.js",
+    "static/js/453.99a6a5a3.chunk.js": "/shooking-proto/static/js/453.99a6a5a3.chunk.js",
+    "static/media/shoe0003.png": "/shooking-proto/static/media/shoe0003.29c88766d477dec7f1b9.png",
+    "static/media/shoe0002.png": "/shooking-proto/static/media/shoe0002.3699c05a7c3bf011354e.png",
+    "static/media/shoe0001.png": "/shooking-proto/static/media/shoe0001.6a8aae4e9c2c822da447.png",
+    "static/media/noImage.png": "/shooking-proto/static/media/noImage.e39c134385f7fb39eba5.png",
+    "index.html": "/shooking-proto/index.html",
+    "main.daddd230.css.map": "/shooking-proto/static/css/main.daddd230.css.map",
+    "main.14ae68ed.js.map": "/shooking-proto/static/js/main.14ae68ed.js.map",
+    "453.99a6a5a3.chunk.js.map": "/shooking-proto/static/js/453.99a6a5a3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.daddd230.css",
+    "static/js/main.14ae68ed.js"
+  ]
+}

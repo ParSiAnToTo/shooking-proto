@@ -1,0 +1,31 @@
+# dependencies
+shooking/node_modules/
+
+# manages
+shooking/.pnp
+shooking/.pnp.js
+
+# testing
+shooking/coverage/
+
+# production
+shooking/build/
+
+# system file
+.DS_Store
+
+# environment var
+shooking/.env
+shooking/.env.local
+shooking/.env.development.local
+shooking/.env.test.local
+shooking/.env.production.local
+
+# log file
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor/IDE
+vscode/
+*.log
