@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { CardNumberInput } from '../CardNumberInput';
+import { CardNumberInput } from '../inputs/CardNumberInput';
 
 describe('CardNumberInput', () => {
     it('마스킹 렌더링 및 숫자 포멧 체크', () => {

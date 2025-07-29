@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { ExpiryDateInput } from '../ExpiryDateInput';
+import { ExpiryDateInput } from '../inputs/ExpiryDateInput';
 
 describe('ExpiryDateInput', () => {
     test('숫자만 입력, 4자리까지 허용', () => {

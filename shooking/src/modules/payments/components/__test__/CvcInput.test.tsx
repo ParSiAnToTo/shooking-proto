@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { CvcInput } from '../CvcInput';
+import { CvcInput } from '../inputs/CvcInput';
 
 describe('CvcInput', () => {
     test('숫자 이외 문자는 입력 방지', () => {

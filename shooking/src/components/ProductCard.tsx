@@ -4,9 +4,10 @@ import { Product } from '../data/products';
 interface ProductProps {
   product: Product;
   onAdd: () => void;
+  onBuy: () => void;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ product, onAdd }) => {
+const ProductCard: React.FC<ProductProps> = ({ product, onAdd, onBuy }) => {
   const [ isAdded, setIsAdded ] = useState(false);
 
   const handleAddClick = () => {
@@ -35,6 +36,12 @@ const ProductCard: React.FC<ProductProps> = ({ product, onAdd }) => {
           }`}
         >
           {isAdded ? '담김!' : '담기'}
+        </button>
+        <button
+          className="text-xs text-black bg-[#FFEF64] py-1 px-3 rounded-xl"
+          onClick={onBuy}
+        >
+          구매
         </button>
       </div>
     </div>

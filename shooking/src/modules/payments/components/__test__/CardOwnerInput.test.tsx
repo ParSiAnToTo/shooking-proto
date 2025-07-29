@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { CardOwnerInput } from '../CardOwnerInput';
+import { CardOwnerInput } from '../inputs/CardOwnerInput';
 
 describe('CardOwnerInput', () => {
     test('영문 대문자와 공백만 입력, 자동 대문자 변환, 마지막 공백 제거', () => {

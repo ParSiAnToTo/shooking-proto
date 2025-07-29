@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { PasswordInput } from '../PasswordInput';
+import { PasswordInput } from '../inputs/PasswordInput';
 
 describe('PasswordInput', () => {
     test('숫자만 입력', () => {

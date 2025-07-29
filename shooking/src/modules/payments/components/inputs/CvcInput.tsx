@@ -11,14 +11,12 @@ export const CvcInput: React.FC<Props> = ({ value, onChange }) => {
         onChange(digits);
     };
 
-    const masked = '*'.repeat(value.length);
-
     return (
         <input
-            type="text"
+            type="password"
             inputMode="numeric"
             className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
-            value={masked}
+            value={value}
             onChange={handleInputChange}
             data-testid="card-cvc-input"
         />
