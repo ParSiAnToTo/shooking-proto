@@ -29,3 +29,6 @@ yarn-error.log*
 # editor/IDE
 vscode/
 *.log
+
+*storybook.log
+storybook-static
