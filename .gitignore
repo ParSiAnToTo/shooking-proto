@@ -10,6 +10,7 @@ shooking/coverage/
 
 # production
 shooking/build/
+shooking/storybook-static/
 
 # system file
 .DS_Store
