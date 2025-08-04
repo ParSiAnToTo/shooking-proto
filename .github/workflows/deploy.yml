@@ -29,10 +29,11 @@ jobs:
       - name: Deploy to GitHub Pages
         working-directory: ./shooking
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          
-          npx gh-pages -d build -u "github-actions[bot] <github-actions[bot]@users.noreply.github.com>" \
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+          npx gh-pages -d build -u "github-actions <github-actions@github.com>" \
             -r https://x-access-token:${GH_TOKEN}@github.com/ParSiAnToTo/shooking-proto.git
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
