@@ -31,6 +31,8 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          npm run deploy
+          
+          npx gh-pages -d build -u "github-actions[bot] <github-actions[bot]@users.noreply.github.com>" \
+            -r https://x-access-token:${GH_TOKEN}@github.com/ParSiAnToTo/shooking-proto.git
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
