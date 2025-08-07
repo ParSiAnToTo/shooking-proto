@@ -19,7 +19,7 @@ export const CardOwnerInput: React.FC<Props> = ({ value, onChange }) => {
     return (
         <input
             type="text"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border bg-[#ECEBF1] rounded px-3 py-2 text-sm"
             value={value}
             onChange={handleInputChange}
             data-testid="card-owner-input"

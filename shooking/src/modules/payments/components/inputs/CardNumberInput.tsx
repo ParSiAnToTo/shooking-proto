@@ -19,7 +19,7 @@ export const CardNumberInput: React.FC<Props> = ({ value, onChange }) => {
             onAccept={handleAccept}
             type="tel"
             inputMode="numeric"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border bg-[#ECEBF1] rounded px-3 py-2 text-sm"
             data-testid="card-number-input"
             maxLength={19}
         />

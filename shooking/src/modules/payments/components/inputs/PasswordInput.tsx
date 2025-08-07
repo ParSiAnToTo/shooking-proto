@@ -34,7 +34,7 @@ export const PasswordInput: React.FC<Props> = ({ value, onChange }) => {
                 type="password"
                 inputMode="numeric"
                 maxLength={1}
-                className="w-10 text-center border border-gray-300 rounded px-2 py-2 text-sm"
+                className="w-10 text-center border bg-[#ECEBF1] rounded px-2 py-2 text-sm"
                 value={value[0] ? '•' : ''}
                 onChange={(e) => handleFirstChange(e.target.value)}
                 onKeyDown={handleFirstKeyDown}
@@ -44,15 +44,15 @@ export const PasswordInput: React.FC<Props> = ({ value, onChange }) => {
                 type="password"
                 inputMode="numeric"
                 maxLength={1}
-                className="w-10 text-center border border-gray-300 rounded px-2 py-2 text-sm"
+                className="w-10 text-center border bg-[#ECEBF1] rounded px-2 py-2 text-sm"
                 value={value[1] ? '•' : ''}
                 onChange={(e) => handleSecondChange(e.target.value)}
                 onKeyDown={handleSecondKeyDown}
                 data-testid="card-password-input-2"
             />
 
-            <div className="w-10 text-center border border-gray-300 rounded px-2 py-2 text-sm bg-gray-100 select-none">•</div>
-            <div className="w-10 text-center border border-gray-300 rounded px-2 py-2 text-sm bg-gray-100 select-none">•</div>
+            <div className="w-10 text-center rounded px-2 py-2 text-sm font-extrabold select-none">•</div>
+            <div className="w-10 text-center rounded px-2 py-2 text-sm font-extrabold select-none">•</div>
         </div>
     );
 };

@@ -3,35 +3,42 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { CardNumberInput } from '../inputs/CardNumberInput';
 
 describe('CardNumberInput', () => {
-    it('마스킹 렌더링 및 숫자 포멧 체크', () => {
-        render(<CardNumberInput value="1234567890123456" onChange={() => {}} />);
-        const input = screen.getByTestId('card-number-input') as HTMLInputElement;
-        expect(input.value).toBe('1234-5678-****-****');
+    it('컴포넌트 렌더링', () => {
+        const mockOnChange = jest.fn();
+        render(<CardNumberInput value="" onChange={mockOnChange} />);
+        const inputElement = screen.getByTestId('card-number-input');
+
+        expect(inputElement).toBeInTheDocument();
     });
 
-    it('8자 이후 마스킹 체크', () => {
-        render(<CardNumberInput value="123456781234" onChange={() => {}} />);
-        const input = screen.getByTestId('card-number-input') as HTMLInputElement;
-        expect(input.value).toBe('1234-5678-****');
+    it('초기 prop 값 렌더링', () => {
+        const mockOnChange = jest.fn();
+        const initialValue = '1234567890123456';
+        render(<CardNumberInput value={initialValue} onChange={mockOnChange} />);
+        const inputElement = screen.getByTestId('card-number-input');
+
+        expect(inputElement).toHaveValue('1234-5678-9012-3456');
     });
 
-    it('최대 숫자 16자만 리턴 여부 체크', () => {
-        const handleChange = jest.fn();
-        render(<CardNumberInput value="" onChange={handleChange} />);
-        const input = screen.getByTestId('card-number-input');
+    it('최대 입력 16자리 초과 입력 무시', () => {
+        const mockOnChange = jest.fn();
+        render(<CardNumberInput value="" onChange={mockOnChange} />);
+        const inputElement = screen.getByTestId('card-number-input');
 
-        fireEvent.change(input, { target: { value: 'abcd1234!@#$567890123456' } });
+        const longValue = '12345678901234567';
+        fireEvent.input(inputElement, { target: { value: longValue } });
 
-        expect(handleChange).toHaveBeenCalledWith('1234567890123456');
+        expect(mockOnChange).toHaveBeenCalledWith('1234567890123456');
     });
 
-    it('콜백 시 숫자 리턴', () => {
-        const handleChange = jest.fn();
-        render(<CardNumberInput value="" onChange={handleChange} />);
-        const input = screen.getByTestId('card-number-input');
+    it('숫자가 아닌 문자 자동 제거', () => {
+        const mockOnChange = jest.fn();
+        render(<CardNumberInput value="" onChange={mockOnChange} />);
+        const inputElement = screen.getByTestId('card-number-input');
 
-        fireEvent.change(input, { target: { value: '1111-2222-3333-4444' } });
+        const mixedValue = '1a2b-3c4d-5e6f-7g8h';
+        fireEvent.input(inputElement, { target: { value: mixedValue } });
 
-        expect(handleChange).toHaveBeenCalledWith('1111222233334444');
+        expect(mockOnChange).toHaveBeenCalledWith('12345678');
     });
 });

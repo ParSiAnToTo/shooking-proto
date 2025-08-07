@@ -32,11 +32,15 @@ const CardList: React.FC<Props> = ({ onAdd, onBack }) => {
                 </>
             ) : (
                 <>
-                    <div className="mb-4">
-                        <CardPreview card={cards[0]} />
-                        <button className="mt-3 w-[213px] bg-[#FFEF64] text-black py-2 rounded-full text-sm font-semibold shadow-md">
-                            이 카드로 결제하기
-                        </button>
+                    <div className="space-y-6 mb-6">
+                        {cards.map((card) => (
+                            <div key={card.id}>
+                                <CardPreview card={card} />
+                                <button className="mt-3 w-[213px] bg-[#FFEF64] text-black py-2 rounded-full text-sm font-semibold shadow-md">
+                                    이 카드로 결제하기
+                                </button>
+                            </div>
+                        ))}
                     </div>
 
                     <button

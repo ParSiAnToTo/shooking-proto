@@ -37,7 +37,7 @@ export const ExpiryDateInput: React.FC<Props> = ({ value, onChange }) => {
         <input
             type="text"
             inputMode="numeric"
-            className="w-full border border-gray-300 rounded px-3 py-2 text-sm"
+            className="w-full border bg-[#ECEBF1] rounded px-3 py-2 text-sm"
             value={formatExpiry(value)}
             onChange={handleInputChange}
             data-testid="card-expiry-input"

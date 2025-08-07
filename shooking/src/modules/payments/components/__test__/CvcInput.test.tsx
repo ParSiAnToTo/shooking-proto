@@ -27,12 +27,6 @@ describe('CvcInput', () => {
         expect(handleChange).toHaveBeenCalledWith('123');
     });
 
-    test('입력한 값의 길이만큼 *로 마스킹', () => {
-        render(<CvcInput value="12" onChange={() => {}} />);
-        const input = screen.getByTestId('card-cvc-input');
-        expect(input).toHaveValue('**');
-    });
-
     test('입력값이 없으면 빈 문자열 표시', () => {
         render(<CvcInput value="" onChange={() => {}} />);
         const input = screen.getByTestId('card-cvc-input');

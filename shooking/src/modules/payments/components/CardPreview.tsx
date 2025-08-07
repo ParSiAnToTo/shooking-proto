@@ -23,20 +23,19 @@ const getFormattedExpiryDate = (expiry: string) => {
 };
 
 
-const CardPreview: React.FC<Props> = ({ card }: Props) => {
+const CardPreview: React.FC<Props> = ({ card }) => {
     return (
-        <div
-            className="bg-[#333333] rounded-md shadow-md px-4 pt-3 pb-2 text-white w-[213px] h-[133px] flex flex-col justify-between"
-        >
-            <div className="w-[40px] h-[26px] bg-[#CBBA54] rounded-sm mb-2" />
+        <div className="relative bg-[#333333] rounded-md shadow-md text-white w-[213px] h-[133px] px-4 py-3">
 
-            <div className="text-sm tracking-widest mb-2">
+            <div className="absolute left-4 top-[35%] w-[40px] h-[26px] bg-[#CBBA54] rounded-sm" />
+
+            <div className="absolute left-4 right-4 bottom-8 text-sm tracking-widest text-left">
                 {getMaskedCardNumber(card.cardNumber)}
             </div>
 
-            <div className="flex justify-between text-xs text-gray-300">
+            <div className="absolute left-4 right-4 bottom-3 flex justify-between text-xs text-gray-300">
                 <span>{card.ownerName || 'NAME'}</span>
-                <span>{getFormattedExpiryDate(card.expiryDate)}</span>
+                <span>{getFormattedExpiryDate(card.expiryDate) || 'MM/YY'}</span>
             </div>
         </div>
     );
