@@ -99,7 +99,8 @@ const CardForm: React.FC<Props> = ({ onSubmit, onCancel }) => {
             <div>카드 비밀번호</div>
             <PasswordInput value={password} onChange={setPassword} />
 
-            <div className="fixed bottom-4 left-0 w-full px-4">
+            <div className="sticky bottom-0 left-0 right-0 bg-white pt-3 pb-4 border-t z-10
+                            -mx-4 px-4 pb-[env(safe-area-inset-bottom)]">
                 <SubmitButton onClick={handleSubmit} disabled={!formValid} />
             </div>
         </div>
