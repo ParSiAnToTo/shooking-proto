@@ -2,21 +2,22 @@ name: Deploy React App to GitHub Pages
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: ./shooking/package-lock.json
 
       - name: Install dependencies
         working-directory: ./shooking
@@ -24,16 +25,17 @@ jobs:
 
       - name: Build project
         working-directory: ./shooking
+        env:
+          PUBLIC_URL: /shooking-proto
+          REACT_APP_MSW: 'true'
         run: npm run build
 
       - name: Deploy to GitHub Pages
         working-directory: ./shooking
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-
           npx gh-pages -d build -u "github-actions <github-actions@github.com>" \
             -r https://x-access-token:${GH_TOKEN}@github.com/ParSiAnToTo/shooking-proto.git
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-
