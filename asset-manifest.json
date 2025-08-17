@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/shooking-proto/static/css/main.02c56eca.css",
-    "main.js": "/shooking-proto/static/js/main.4cddf0b9.js",
-    "static/js/453.99a6a5a3.chunk.js": "/shooking-proto/static/js/453.99a6a5a3.chunk.js",
+    "main.css": "/shooking-proto/static/css/main.b288e801.css",
+    "main.js": "/shooking-proto/static/js/main.d16660e4.js",
+    "static/js/99.8d06f0e8.chunk.js": "/shooking-proto/static/js/99.8d06f0e8.chunk.js",
+    "static/js/870.60b5c9e3.chunk.js": "/shooking-proto/static/js/870.60b5c9e3.chunk.js",
     "static/media/shoe0003.png": "/shooking-proto/static/media/shoe0003.29c88766d477dec7f1b9.png",
     "static/media/shoe0002.png": "/shooking-proto/static/media/shoe0002.3699c05a7c3bf011354e.png",
     "static/media/shoe0001.png": "/shooking-proto/static/media/shoe0001.6a8aae4e9c2c822da447.png",
     "static/media/noImage.png": "/shooking-proto/static/media/noImage.e39c134385f7fb39eba5.png",
     "index.html": "/shooking-proto/index.html",
-    "main.02c56eca.css.map": "/shooking-proto/static/css/main.02c56eca.css.map",
-    "main.4cddf0b9.js.map": "/shooking-proto/static/js/main.4cddf0b9.js.map",
-    "453.99a6a5a3.chunk.js.map": "/shooking-proto/static/js/453.99a6a5a3.chunk.js.map"
+    "main.b288e801.css.map": "/shooking-proto/static/css/main.b288e801.css.map",
+    "main.d16660e4.js.map": "/shooking-proto/static/js/main.d16660e4.js.map",
+    "99.8d06f0e8.chunk.js.map": "/shooking-proto/static/js/99.8d06f0e8.chunk.js.map",
+    "870.60b5c9e3.chunk.js.map": "/shooking-proto/static/js/870.60b5c9e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.02c56eca.css",
-    "static/js/main.4cddf0b9.js"
+    "static/css/main.b288e801.css",
+    "static/js/main.d16660e4.js"
   ]
 }
