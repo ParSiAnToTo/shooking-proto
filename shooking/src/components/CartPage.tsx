@@ -73,7 +73,7 @@ const CartPage: React.FC<Props> = ({ onBack, onCheckout }) => {
                     >
                     –
                     </button>
-                    <span className="text-lg select-none">{item.qty}</span>
+                    <span className="text-lg select-none" data-testid={`qty-${item.id}`}>{item.qty}</span>
                     <button
                     aria-label="수량 증가"
                     onClick={() => inc(item.id)}
@@ -98,7 +98,7 @@ const CartPage: React.FC<Props> = ({ onBack, onCheckout }) => {
 
         {/* 합계/배송/총 금액 */}
         <div className="mt-2 border-y bg-white">
-            <div className="px-4 py-4 flex justify-between">
+            <div className="px-4 py-4 flex justify-between" data-testid="total-section">
             <span className="text-gray-600">상품 금액</span>
             <span className="text-xl font-bold">{fmt(subtotal)}</span>
             </div>
@@ -121,7 +121,7 @@ const CartPage: React.FC<Props> = ({ onBack, onCheckout }) => {
 
         <div className="px-4 py-5 flex justify-between">
             <span className="text-gray-800 font-semibold">총 금액</span>
-            <span className="text-2xl font-extrabold">{fmt(total)}</span>
+            <span className="text-2xl font-extrabold" data-testid="total-amount">{fmt(total)}</span>
         </div>
 
         {/* 하단 결제 버튼 */}
