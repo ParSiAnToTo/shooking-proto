@@ -6,12 +6,13 @@ import {
     shippingFeeSelector,
     cartTotalSelector,
 } from '../state/cart';
+import { usePaymentsModal } from '../modules/payments/state/paymentsModal';
 
 const fmt = (n: number) => `${n.toLocaleString('ko-KR')}원`;
 
 type Props = {
     onBack: () => void;
-    onCheckout: () => void; // 결제 모듈 모달 오픈
+    onCheckout: () => void;
 };
 
 const CartPage: React.FC<Props> = ({ onBack, onCheckout }) => {
@@ -19,6 +20,8 @@ const CartPage: React.FC<Props> = ({ onBack, onCheckout }) => {
     const subtotal = useRecoilValue(cartSubtotalSelector);
     const shipping = useRecoilValue(shippingFeeSelector);
     const total = useRecoilValue(cartTotalSelector);
+
+    const { openList } = usePaymentsModal();
 
     const inc = (id: number) =>
         setItems(prev => prev.map(i => (i.id === id ? { ...i, qty: i.qty + 1 } : i)));
@@ -126,7 +129,7 @@ const CartPage: React.FC<Props> = ({ onBack, onCheckout }) => {
             <button
             className="w-full py-4 rounded-[28px] bg-black text-white text-lg font-semibold disabled:bg-gray-300"
             disabled={items.length === 0}
-            onClick={onCheckout}
+            onClick={() => openList()}
             >
             결제하기
             </button>

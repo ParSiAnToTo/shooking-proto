@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import ProductCard from './components/ProductCard';
 import Header from './components/Header';
 
-import CardList from './modules/payments/components/CardList';
-import CardForm from './modules/payments/components/CardForm';
+import PaymentsModal from './modules/payments/components/PaymentsModal';
+import { usePaymentsModal } from './modules/payments/state/paymentsModal';
+
 import { CardProvider } from './modules/payments/contexts/CardContext';
 
 import { useRecoilValue, useRecoilValueLoadable, useSetRecoilState } from 'recoil';
@@ -12,11 +13,13 @@ import { cartCountSelector, cartState } from './state/cart';
 import type { Product } from './mocks/data';
 import CartPage from './components/CartPage';
 
-type View = 'product' | 'cardList' | 'cardForm' | 'cart' ;
+type View = 'product'| 'cart' ;
 
 
 function App() {
     const [view, setView] = useState<View>('product');
+
+    const { openList } = usePaymentsModal();
 
     const productsLoadable = useRecoilValueLoadable(productsQuery);
     const setCart = useSetRecoilState(cartState);
@@ -25,7 +28,9 @@ function App() {
     const addToCart = (product: Product) => {
         setCart(prev => {
         const hit = prev.find(i => i.id === product.id);
-        if (hit) return prev.map(i => (i.id === product.id ? { ...i, qty: i.qty + 1 } : i));
+        if (hit) {
+            return prev.map(i => (i.id === product.id ? { ...i, qty: i.qty + 1 } : i));
+        }
         return [...prev, { ...product, qty: 1 }];
         });
     };
@@ -60,7 +65,7 @@ function App() {
                         key={product.id}
                         product={product}
                         onAdd={() => addToCart(product)}
-                        onBuy={() => setView('cardList')}
+                        onBuy={() => openList()}
                     />
                     ))}
                 </div>
@@ -69,17 +74,12 @@ function App() {
             )}
 
             {view === 'cart' && (
-            <CartPage onBack={() => setView('product')} onCheckout={() => setView('cardList')} />
-            )}
-
-            {view === 'cardList' && (
-            <CardList onAdd={() => setView('cardForm')} onBack={() => setView('product')} />
-            )}
-
-            {view === 'cardForm' && (
-            <CardForm onSubmit={() => setView('cardList')} onCancel={() => setView('cardList')} />
+            <CartPage 
+                onBack={() => setView('product')} 
+                onCheckout={() => openList()} />
             )}
         </div>
+        <PaymentsModal />
         </CardProvider>
     );
 }
